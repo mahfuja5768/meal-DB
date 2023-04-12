@@ -31,6 +31,13 @@ const searchFood = () =>{
     loadMeals(searchText);
     searchField.value = ''
 }
+document.getElementById('search-field').addEventListener('keypress', function (e) {
+  if (e.key === 'Enter') {
+    searchFood()
+  }
+});
+
+
 const loadMealDetail = (idMeal) =>{
     const url =`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`
     fetch(url)
